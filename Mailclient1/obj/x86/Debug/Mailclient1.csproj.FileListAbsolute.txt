@@ -1,0 +1,16 @@
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\bin\Debug\Mailclient1.exe
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\bin\Debug\Mailclient1.pdb
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\obj\x86\Debug\Mailclient1.MailClient.resources
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\obj\x86\Debug\Mailclient1.New_msg.resources
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\obj\x86\Debug\Mailclient1.Properties.Resources.resources
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\obj\x86\Debug\Mailclient1.exe
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\obj\x86\Debug\Mailclient1.pdb
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\obj\x86\Debug\Mailclient1.Login.resources
+D:\Programmering\Mailclient\Mailclient1\Mailclient1\bin\Debug\OpenPop.dll
+D:\Programmering\Mailclient - Kopi\Mailclient1\Mailclient1\obj\x86\Debug\Mailclient1.exe
+D:\Programmering\Mailclient - Kopi\Mailclient1\Mailclient1\obj\x86\Debug\Mailclient1.pdb
+D:\Programmering\Github_Projects\mail-client1\Mailclient1\obj\x86\Debug\Mailclient1.exe
+D:\Programmering\Github_Projects\mail-client1\Mailclient1\obj\x86\Debug\Mailclient1.pdb
