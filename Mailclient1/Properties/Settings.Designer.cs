@@ -76,5 +76,65 @@ namespace Mailclient1.Properties {
                 this["usingDSetting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string usingSpop {
+            get {
+                return ((string)(this["usingSpop"]));
+            }
+            set {
+                this["usingSpop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string usingSsmtp {
+            get {
+                return ((string)(this["usingSsmtp"]));
+            }
+            set {
+                this["usingSsmtp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string usingPOPport {
+            get {
+                return ((string)(this["usingPOPport"]));
+            }
+            set {
+                this["usingPOPport"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string usingSMTPport {
+            get {
+                return ((string)(this["usingSMTPport"]));
+            }
+            set {
+                this["usingSMTPport"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool usingCheckssl {
+            get {
+                return ((bool)(this["usingCheckssl"]));
+            }
+            set {
+                this["usingCheckssl"] = value;
+            }
+        }
     }
 }

@@ -35,15 +35,17 @@ namespace Mailclient1
          
             Form MailClient = new New_msg(text_user.Text, text_psswd.Text, text_host.Text, Convert.ToInt32(text_port.Text),check_ssl.Checked);
             MailClient.ShowDialog();
-        }
+        } /// Opens new form for new msg
 
         private void button1_Click(object sender, EventArgs e)
         {
             ReceiveMails();
-        }
+            SavingSettings();
+        } /// Executing the functions
 
         private readonly Dictionary<int, Message> messages = new Dictionary<int, Message>();
         private readonly Pop3Client pop3Client;
+        
         private void ReceiveMails()
         {
             try
@@ -140,7 +142,18 @@ namespace Mailclient1
                 ///uidlButton.Enabled = true;
                 progress_Bar.Value = 100;
             }
-        }
+        } /// Makes pop connection and gets mail
+
+        private void SavingSettings() 
+        {
+            Properties.Settings.Default.usingSpop = server_pop.Text;
+            Properties.Settings.Default.usingSsmtp = text_host.Text;
+            Properties.Settings.Default.usingPOPport = port_pop.Text;
+            Properties.Settings.Default.usingSMTPport = text_port.Text;
+            Properties.Settings.Default.usingCheckssl = check_ssl.Checked;
+            Properties.Settings.Default.Save();
+
+        } /// Saves setting typed in
         
         private void ListMessagesMessageSelected(object sender, TreeViewEventArgs e)
         {
@@ -333,6 +346,12 @@ namespace Mailclient1
 
         private void Login_Load(object sender, EventArgs e)
         {
+
+            server_pop.Text = Properties.Settings.Default.usingSpop;
+            text_host.Text = Properties.Settings.Default.usingSsmtp;
+            port_pop.Text = Properties.Settings.Default.usingPOPport;
+            text_port.Text = Properties.Settings.Default.usingSMTPport;
+            check_ssl.Checked = Properties.Settings.Default.usingCheckssl;
             this.BackColor = Properties.Settings.Default.usingDefaultBGC;
             this.Text = Properties.Settings.Default.usingDSetting;
         } /// Loading Saved settings on Form load
