@@ -50,11 +50,19 @@
             this.progress_Bar = new System.Windows.Forms.ProgressBar();
             this.total_msg = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.baggroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.greyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // but_login
             // 
-            this.but_login.Location = new System.Drawing.Point(21, 13);
+            this.but_login.Location = new System.Drawing.Point(21, 37);
             this.but_login.Name = "but_login";
             this.but_login.Size = new System.Drawing.Size(103, 26);
             this.but_login.TabIndex = 0;
@@ -64,14 +72,14 @@
             // 
             // text_user
             // 
-            this.text_user.Location = new System.Drawing.Point(207, 12);
+            this.text_user.Location = new System.Drawing.Point(207, 36);
             this.text_user.Name = "text_user";
             this.text_user.Size = new System.Drawing.Size(102, 20);
             this.text_user.TabIndex = 1;
             // 
             // text_psswd
             // 
-            this.text_psswd.Location = new System.Drawing.Point(207, 39);
+            this.text_psswd.Location = new System.Drawing.Point(207, 63);
             this.text_psswd.Name = "text_psswd";
             this.text_psswd.PasswordChar = '*';
             this.text_psswd.Size = new System.Drawing.Size(102, 20);
@@ -79,7 +87,7 @@
             // 
             // text_port
             // 
-            this.text_port.Location = new System.Drawing.Point(631, 39);
+            this.text_port.Location = new System.Drawing.Point(631, 63);
             this.text_port.Name = "text_port";
             this.text_port.Size = new System.Drawing.Size(102, 20);
             this.text_port.TabIndex = 3;
@@ -88,7 +96,7 @@
             // check_ssl
             // 
             this.check_ssl.AutoSize = true;
-            this.check_ssl.Location = new System.Drawing.Point(207, 65);
+            this.check_ssl.Location = new System.Drawing.Point(207, 89);
             this.check_ssl.Name = "check_ssl";
             this.check_ssl.Size = new System.Drawing.Size(60, 17);
             this.check_ssl.TabIndex = 4;
@@ -98,7 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(143, 19);
+            this.label1.Location = new System.Drawing.Point(143, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 5;
@@ -107,7 +115,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(143, 45);
+            this.label2.Location = new System.Drawing.Point(143, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 6;
@@ -116,7 +124,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(569, 42);
+            this.label3.Location = new System.Drawing.Point(569, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 7;
@@ -124,7 +132,7 @@
             // 
             // text_host
             // 
-            this.text_host.Location = new System.Drawing.Point(440, 38);
+            this.text_host.Location = new System.Drawing.Point(440, 62);
             this.text_host.Name = "text_host";
             this.text_host.Size = new System.Drawing.Size(102, 20);
             this.text_host.TabIndex = 8;
@@ -133,7 +141,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(364, 41);
+            this.label4.Location = new System.Drawing.Point(364, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 9;
@@ -141,14 +149,14 @@
             // 
             // view_mails
             // 
-            this.view_mails.Location = new System.Drawing.Point(12, 100);
+            this.view_mails.Location = new System.Drawing.Point(12, 124);
             this.view_mails.Name = "view_mails";
             this.view_mails.Size = new System.Drawing.Size(282, 236);
             this.view_mails.TabIndex = 10;
             // 
             // the_mail
             // 
-            this.the_mail.Location = new System.Drawing.Point(300, 100);
+            this.the_mail.Location = new System.Drawing.Point(300, 124);
             this.the_mail.Multiline = true;
             this.the_mail.Name = "the_mail";
             this.the_mail.Size = new System.Drawing.Size(266, 236);
@@ -156,14 +164,14 @@
             // 
             // atached_file
             // 
-            this.atached_file.Location = new System.Drawing.Point(572, 100);
+            this.atached_file.Location = new System.Drawing.Point(572, 124);
             this.atached_file.Name = "atached_file";
             this.atached_file.Size = new System.Drawing.Size(183, 124);
             this.atached_file.TabIndex = 12;
             // 
             // server_pop
             // 
-            this.server_pop.Location = new System.Drawing.Point(440, 12);
+            this.server_pop.Location = new System.Drawing.Point(440, 36);
             this.server_pop.Name = "server_pop";
             this.server_pop.Size = new System.Drawing.Size(102, 20);
             this.server_pop.TabIndex = 13;
@@ -172,7 +180,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(364, 16);
+            this.label5.Location = new System.Drawing.Point(364, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 14;
@@ -180,7 +188,7 @@
             // 
             // port_pop
             // 
-            this.port_pop.Location = new System.Drawing.Point(631, 13);
+            this.port_pop.Location = new System.Drawing.Point(631, 37);
             this.port_pop.Name = "port_pop";
             this.port_pop.Size = new System.Drawing.Size(102, 20);
             this.port_pop.TabIndex = 15;
@@ -189,7 +197,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(569, 16);
+            this.label6.Location = new System.Drawing.Point(569, 40);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 13);
             this.label6.TabIndex = 16;
@@ -197,7 +205,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(21, 45);
+            this.button1.Location = new System.Drawing.Point(21, 69);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 23);
             this.button1.TabIndex = 17;
@@ -211,23 +219,82 @@
             // 
             // progress_Bar
             // 
-            this.progress_Bar.Location = new System.Drawing.Point(12, 342);
+            this.progress_Bar.Location = new System.Drawing.Point(12, 366);
             this.progress_Bar.Name = "progress_Bar";
             this.progress_Bar.Size = new System.Drawing.Size(743, 23);
             this.progress_Bar.TabIndex = 18;
             // 
             // total_msg
             // 
-            this.total_msg.Location = new System.Drawing.Point(21, 74);
+            this.total_msg.Location = new System.Drawing.Point(21, 98);
             this.total_msg.Name = "total_msg";
             this.total_msg.Size = new System.Drawing.Size(56, 20);
             this.total_msg.TabIndex = 19;
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem,
+            this.eXITToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(767, 24);
+            this.menuStrip.TabIndex = 21;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.baggroundColorToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // eXITToolStripMenuItem
+            // 
+            this.eXITToolStripMenuItem.Name = "eXITToolStripMenuItem";
+            this.eXITToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.eXITToolStripMenuItem.Text = "EXIT";
+            this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
+            // 
+            // baggroundColorToolStripMenuItem
+            // 
+            this.baggroundColorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.blueToolStripMenuItem,
+            this.greyToolStripMenuItem,
+            this.testToolStripMenuItem});
+            this.baggroundColorToolStripMenuItem.Name = "baggroundColorToolStripMenuItem";
+            this.baggroundColorToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.baggroundColorToolStripMenuItem.Text = "Bagground color";
+            // 
+            // blueToolStripMenuItem
+            // 
+            this.blueToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.blueToolStripMenuItem.Text = "Blue";
+            this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
+            // 
+            // greyToolStripMenuItem
+            // 
+            this.greyToolStripMenuItem.Name = "greyToolStripMenuItem";
+            this.greyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.greyToolStripMenuItem.Text = "Grey";
+            this.greyToolStripMenuItem.Click += new System.EventHandler(this.greyToolStripMenuItem_Click);
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 377);
+            this.ClientSize = new System.Drawing.Size(767, 401);
+            this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.total_msg);
             this.Controls.Add(this.progress_Bar);
             this.Controls.Add(this.button1);
@@ -248,8 +315,12 @@
             this.Controls.Add(this.text_psswd);
             this.Controls.Add(this.text_user);
             this.Controls.Add(this.but_login);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +350,12 @@
         private System.Windows.Forms.ProgressBar progress_Bar;
         private System.Windows.Forms.TextBox total_msg;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eXITToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem baggroundColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem greyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
     }
 }

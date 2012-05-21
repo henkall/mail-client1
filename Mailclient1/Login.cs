@@ -25,6 +25,7 @@ namespace Mailclient1
         {
             InitializeComponent();
             pop3Client = new Pop3Client();
+            /// Makes the onclick work
             view_mails.AfterSelect += new TreeViewEventHandler(ListMessagesMessageSelected);
             atached_file.AfterSelect += new TreeViewEventHandler(ListAttachmentsAttachmentSelected);
         }
@@ -246,9 +247,6 @@ namespace Mailclient1
                     }
             }
 
-            // Now set the headers displayed on the GUI to the header table we just generated
-            // gridHeaders.DataMember = table.TableName;
-            // gridHeaders.DataSource = dataSet;
         }
 
         /// <summary>
@@ -313,5 +311,35 @@ namespace Mailclient1
                 MessageBox.Show(this, "Attachment object was null!");
             }
         }
+        
+        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Properties.Settings.Default.myFavoriteColor;
+            Properties.Settings.Default.usingDefaultBGC = this.BackColor;
+            Properties.Settings.Default.Save();
+        } /// Changing Backgroud color
+
+        private void greyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Properties.Settings.Default.myDefaultColor;
+            Properties.Settings.Default.usingDefaultBGC = this.BackColor;
+            Properties.Settings.Default.Save();
+        } /// Changing Backgroud color
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Text = Properties.Settings.Default.mySetting;
+        } /// Changing Text in Form
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Properties.Settings.Default.usingDefaultBGC;
+            this.Text = Properties.Settings.Default.usingDSetting;
+        } /// Loading Saved settings on Form load
+        
+        private void eXITToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        } /// Closes program
     }
 }
