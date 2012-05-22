@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(New_msg));
             this.text_msg = new System.Windows.Forms.RichTextBox();
             this.but_send = new System.Windows.Forms.Button();
             this.box_to = new System.Windows.Forms.TextBox();
@@ -97,6 +98,7 @@
             this.Controls.Add(this.box_to);
             this.Controls.Add(this.but_send);
             this.Controls.Add(this.text_msg);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "New_msg";
             this.Text = "New Message";
             this.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.but_login = new System.Windows.Forms.Button();
             this.text_user = new System.Windows.Forms.TextBox();
             this.text_psswd = new System.Windows.Forms.TextBox();
@@ -52,11 +53,11 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baggroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.greyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -250,13 +251,6 @@
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
-            // eXITToolStripMenuItem
-            // 
-            this.eXITToolStripMenuItem.Name = "eXITToolStripMenuItem";
-            this.eXITToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.eXITToolStripMenuItem.Text = "EXIT";
-            this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
-            // 
             // baggroundColorToolStripMenuItem
             // 
             this.baggroundColorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -271,23 +265,30 @@
             // 
             this.blueToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.blueToolStripMenuItem.Text = "Blue";
             this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
             // 
             // greyToolStripMenuItem
             // 
             this.greyToolStripMenuItem.Name = "greyToolStripMenuItem";
-            this.greyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.greyToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.greyToolStripMenuItem.Text = "Grey";
             this.greyToolStripMenuItem.Click += new System.EventHandler(this.greyToolStripMenuItem_Click);
             // 
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.testToolStripMenuItem.Text = "Test";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
+            // eXITToolStripMenuItem
+            // 
+            this.eXITToolStripMenuItem.Name = "eXITToolStripMenuItem";
+            this.eXITToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.eXITToolStripMenuItem.Text = "EXIT";
+            this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
             // 
             // Login
             // 
@@ -315,6 +316,7 @@
             this.Controls.Add(this.text_psswd);
             this.Controls.Add(this.text_user);
             this.Controls.Add(this.but_login);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Login";
             this.Text = "Login";

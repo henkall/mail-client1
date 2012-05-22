@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MailClient));
             this.but_new = new System.Windows.Forms.Button();
             this.mail_list = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mail_list);
             this.Controls.Add(this.but_new);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MailClient";
             this.Text = "MailClient";
             this.Load += new System.EventHandler(this.MailClient_Load);
