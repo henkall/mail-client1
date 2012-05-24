@@ -15,12 +15,13 @@ using OpenPop.Common.Logging;
 using Message = OpenPop.Mime.Message;
 using System.IO;
 ///Openpop end
-
+using System.Security.Cryptography;
 
 namespace Mailclient1
 {
     public partial class Login : Form
     {
+        private Rijndael myKey;
         public Login()
         {
             InitializeComponent();
@@ -28,12 +29,13 @@ namespace Mailclient1
             /// Makes the onclick work
             view_mails.AfterSelect += new TreeViewEventHandler(ListMessagesMessageSelected);
             atached_file.AfterSelect += new TreeViewEventHandler(ListAttachmentsAttachmentSelected);
+            myKey = Rijndael.Create();
         }
 
         private void but_login_Click(object sender, EventArgs e)
         {
          
-            Form MailClient = new New_msg(text_user.Text, text_psswd.Text, text_host.Text, Convert.ToInt32(text_port.Text),check_ssl.Checked);
+            Form MailClient = new New_msg(text_user.Text, text_psswd.Text, text_host.Text, Convert.ToInt32(text_port.Text),check_ssl.Checked,myKey);
             MailClient.ShowDialog();
         } /// Opens new form for new msg
 
@@ -259,7 +261,6 @@ namespace Mailclient1
                         rows.Add(new object[] { key, value });
                     }
             }
-
         }
 
         /// <summary>
@@ -346,7 +347,6 @@ namespace Mailclient1
 
         private void Login_Load(object sender, EventArgs e)
         {
-
             server_pop.Text = Properties.Settings.Default.usingSpop;
             text_host.Text = Properties.Settings.Default.usingSsmtp;
             port_pop.Text = Properties.Settings.Default.usingPOPport;
@@ -360,5 +360,55 @@ namespace Mailclient1
         {
             this.Close();
         } /// Closes program
+
+        private void but_decrypt_Click(object sender, EventArgs e)
+        {
+            //System.Text.Encoding byte_text = System.Text.Encoding.ASCII;
+            string roundtrip = DecryptStringFromBytes(System.Convert.FromBase64String(the_mail.Text), myKey.Key, myKey.IV);
+            the_mail.Text = roundtrip;
+        } /// Executing decryption function
+
+        static string DecryptStringFromBytes(byte[] cipherText, byte[] Key, byte[] IV)
+        {
+            // Check arguments.
+            if (cipherText == null || cipherText.Length <= 0)
+                throw new ArgumentNullException("cipherText");
+            if (Key == null || Key.Length <= 0)
+                throw new ArgumentNullException("Key");
+            if (IV == null || IV.Length <= 0)
+                throw new ArgumentNullException("Key");
+
+            // Declare the string used to hold
+            // the decrypted text.
+            string plaintext = null;
+
+            // Create an RijndaelManaged object
+            // with the specified key and IV.
+            using (RijndaelManaged rijAlg = new RijndaelManaged())
+            {
+                rijAlg.Key = Key;
+                rijAlg.IV = IV;
+
+                // Create a decrytor to perform the stream transform.
+                ICryptoTransform decryptor = rijAlg.CreateDecryptor(rijAlg.Key, rijAlg.IV);
+
+                // Create the streams used for decryption.
+                using (MemoryStream msDecrypt = new MemoryStream(cipherText))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            // Read the decrypted bytes from the decrypting stream
+                            // and place them in a string.
+                            plaintext = srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+
+            }
+
+            return plaintext;
+        } /// Decrypting mail
     }
 }

@@ -58,6 +58,7 @@
             this.greyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.but_decrypt = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -290,11 +291,22 @@
             this.eXITToolStripMenuItem.Text = "EXIT";
             this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
             // 
+            // but_decrypt
+            // 
+            this.but_decrypt.Location = new System.Drawing.Point(300, 90);
+            this.but_decrypt.Name = "but_decrypt";
+            this.but_decrypt.Size = new System.Drawing.Size(123, 23);
+            this.but_decrypt.TabIndex = 22;
+            this.but_decrypt.Text = "Decrypt Message";
+            this.but_decrypt.UseVisualStyleBackColor = true;
+            this.but_decrypt.Click += new System.EventHandler(this.but_decrypt_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 401);
+            this.Controls.Add(this.but_decrypt);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.total_msg);
             this.Controls.Add(this.progress_Bar);
@@ -359,5 +371,6 @@
         private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem greyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.Button but_decrypt;
     }
 }

@@ -36,8 +36,8 @@ namespace Mailclient1
 
         private void but_new_Click(object sender, EventArgs e)
         {
-            Form new_mail = new New_msg(user,password,server_add,port,ssl);
-            new_mail.ShowDialog();
+            //Form new_mail = new New_msg(user,password,server_add,port,ssl,myKey);
+            //new_mail.ShowDialog();
         }
 
         private void MailClient_Load(object sender, EventArgs e)
