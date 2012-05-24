@@ -29,21 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(New_msg));
-            this.text_msg = new System.Windows.Forms.RichTextBox();
             this.but_send = new System.Windows.Forms.Button();
             this.box_to = new System.Windows.Forms.TextBox();
             this.box_sub = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.text_msg = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // text_msg
-            // 
-            this.text_msg.Location = new System.Drawing.Point(12, 66);
-            this.text_msg.Name = "text_msg";
-            this.text_msg.Size = new System.Drawing.Size(379, 263);
-            this.text_msg.TabIndex = 0;
-            this.text_msg.Text = "";
             // 
             // but_send
             // 
@@ -87,21 +79,28 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Subject";
             // 
+            // text_msg
+            // 
+            this.text_msg.Location = new System.Drawing.Point(13, 66);
+            this.text_msg.Multiline = true;
+            this.text_msg.Name = "text_msg";
+            this.text_msg.Size = new System.Drawing.Size(378, 279);
+            this.text_msg.TabIndex = 6;
+            // 
             // New_msg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 357);
+            this.Controls.Add(this.text_msg);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.box_sub);
             this.Controls.Add(this.box_to);
             this.Controls.Add(this.but_send);
-            this.Controls.Add(this.text_msg);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "New_msg";
             this.Text = "New Message";
-            this.Load += new System.EventHandler(this.New_msg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,11 +108,11 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox text_msg;
         private System.Windows.Forms.Button but_send;
         private System.Windows.Forms.TextBox box_to;
         private System.Windows.Forms.TextBox box_sub;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox text_msg;
     }
 }

@@ -94,9 +94,5 @@ namespace Mailclient1
             return encrypted;
         }
 
-        private void New_msg_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
