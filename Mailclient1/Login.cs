@@ -21,23 +21,28 @@ namespace Mailclient1
 {
     public partial class Login : Form
     {
+        /// Is the variable used for the Rijndael Key
         private Rijndael myKey;
+        
         public Login()
         {
             InitializeComponent();
             pop3Client = new Pop3Client();
+            
             /// Makes the onclick work
             view_mails.AfterSelect += new TreeViewEventHandler(ListMessagesMessageSelected);
             atached_file.AfterSelect += new TreeViewEventHandler(ListAttachmentsAttachmentSelected);
+            
+            /// Makes the Rijndael Key
             myKey = Rijndael.Create();
-        }
+        } /// Initilizing som important things
 
         private void but_login_Click(object sender, EventArgs e)
         {
          
             Form MailClient = new New_msg(text_user.Text, text_psswd.Text, text_host.Text, Convert.ToInt32(text_port.Text),check_ssl.Checked,myKey);
             MailClient.ShowDialog();
-        } /// Opens new form for new msg
+        } /// Opens new form for "new_msg"
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -52,12 +57,19 @@ namespace Mailclient1
         {
             try
             {
+                /// Setting up pop3 connection
                 if (pop3Client.Connected)
                     pop3Client.Disconnect();
                     pop3Client.Connect(server_pop.Text, int.Parse(port_pop.Text), check_ssl.Checked);
                     pop3Client.Authenticate(text_user.Text, text_psswd.Text);
+                    
+                    /// Finding the number of mails that is gonna be fetched
                     int count = pop3Client.GetMessageCount();
+                    
+                    /// Writing number to total_msg. Shows how many mails being fecthed
                     total_msg.Text = count.ToString();
+                    
+                    /// Clearing the fields where all the fecthed data is getting viewed
                     the_mail.Text = "";
                     messages.Clear();
                     view_mails.Nodes.Clear();
@@ -261,7 +273,7 @@ namespace Mailclient1
                         rows.Add(new object[] { key, value });
                     }
             }
-        }
+        } /// Showing the mails text when selected
 
         /// <summary>
         /// Finds the MessageNumber of a Message given a <see cref="TreeNode"/> to search in.
@@ -283,8 +295,9 @@ namespace Mailclient1
 
             // Otherwise we are not at the root, move up the tree
             return GetMessageNumberFromSelectedNode(node.Parent);
-        }
-        
+        } /// Getting total number of mails
+
+        /// Lists Attached files. Makes it possible to donwload them
         private void ListAttachmentsAttachmentSelected(object sender, TreeViewEventArgs args)
         {
             // Fetch the attachment part which is currently selected
@@ -324,7 +337,7 @@ namespace Mailclient1
             {
                 MessageBox.Show(this, "Attachment object was null!");
             }
-        }
+        } 
         
         private void blueToolStripMenuItem_Click(object sender, EventArgs e)
         {

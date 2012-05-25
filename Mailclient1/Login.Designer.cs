@@ -161,6 +161,7 @@
             this.the_mail.Location = new System.Drawing.Point(300, 124);
             this.the_mail.Multiline = true;
             this.the_mail.Name = "the_mail";
+            this.the_mail.ReadOnly = true;
             this.the_mail.Size = new System.Drawing.Size(266, 236);
             this.the_mail.TabIndex = 11;
             // 

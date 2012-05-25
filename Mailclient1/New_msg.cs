@@ -15,6 +15,12 @@ namespace Mailclient1
 {
     public partial class New_msg : Form
     {
+        /// from_mail = Username
+        /// passwd = Password
+        /// server_add = Server address
+        /// server_port = Server Port
+        /// ssl = SSL on or off
+        /// myKey = Rijndael Key
         private string from_mail = "NULL";
         private string passwd = "NULL";
         private string server_add = "NULL";
@@ -22,6 +28,15 @@ namespace Mailclient1
         private bool ssl = false;
         private Rijndael myKey;
 
+        /// <summary>
+        /// Initilazing all the parameters
+        /// </summary>
+        /// <param name="from_mail"></param> Username
+        /// <param name="password"></param> Password
+        /// <param name="server_add"></param> Server address
+        /// <param name="port"></param> Server Port
+        /// <param name="ssl"></param> SSL on or off
+        /// <param name="myKey"></param> The Rijndael Key
         public New_msg(string from_mail, string password, string server_add, int port, bool ssl, Rijndael myKey)
         {
             InitializeComponent();
@@ -51,10 +66,10 @@ namespace Mailclient1
             using (MailMessage msg = new MailMessage(from_add, to_add) { Subject = box_sub.Text, Body = System.Convert.ToBase64String(encrypted) })
             {
                 smtp.Send(msg);
-                MessageBox.Show("Mail send");
+                MessageBox.Show("Mail is send");
                 this.Close();
             }
-        }
+        } /// Sending mail on buttenclcik
         static byte[] EncryptStringToBytes(string plainText, byte[] Key, byte[] IV)
         {
             // Check arguments.
@@ -92,7 +107,7 @@ namespace Mailclient1
             
             // Return the encrypted bytes from the memory stream.
             return encrypted;
-        }
+        } /// Encrypting mail
 
     }
 }
